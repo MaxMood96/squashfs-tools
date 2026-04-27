@@ -240,12 +240,16 @@ struct symlink {
 
 struct directory_stack {
 	int			size;
-	unsigned int		type;
-	unsigned int		start_block;
-	unsigned int		offset;
-	char			*name;
 	struct directory_level 	*stack;
 	struct symlink		*symlink;
+};
+
+struct symlink_target {
+	int		depth;
+	unsigned int	type;
+	unsigned int	start_block;
+	unsigned int	offset;
+	char		*name;
 };
 
 #define MAX_FOLLOW_SYMLINKS 256
