@@ -381,7 +381,7 @@ be made:
    reading files in parallel.  But even reading 128Kbyte files in parallel can
    achieve a 1.4 times speed increase over a single reader thread.
 
-3. On this SSD drive (and ext4) there doesn't seem to be any performace gain
+3. On this SSD drive (and ext4) there doesn't seem to be any performance gain
    reading files in parallel where the files are 512Kbytes or larger.
 
 4. On this SSD drive (and ext4), with 16Kbyte or larger files, performance
