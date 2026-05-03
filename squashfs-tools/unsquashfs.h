@@ -4,7 +4,8 @@
  * Unsquash a squashfs filesystem.  This is a highly compressed read only
  * filesystem.
  *
- * Copyright (c) 2009, 2010, 2012, 2013, 2014, 2019, 2021, 2022, 2023, 2024
+ * Copyright (c) 2009, 2010, 2012, 2013, 2014, 2019, 2021, 2022, 2023, 2024,
+ * 2026
  * Phillip Lougher <phillip@squashfs.org.uk>
  *
  * This program is free software; you can redistribute it and/or
@@ -229,7 +230,8 @@ struct pathnames {
 
 struct directory_level {
 	unsigned int	start_block;
-	unsigned int	offset;
+	unsigned short	offset;
+	unsigned short	type;
 	char		*name;
 };
 
@@ -242,14 +244,6 @@ struct directory_stack {
 	int			size;
 	struct directory_level 	*stack;
 	struct symlink		*symlink;
-};
-
-struct symlink_target {
-	int		depth;
-	unsigned int	type;
-	unsigned int	start_block;
-	unsigned int	offset;
-	char		*name;
 };
 
 #define MAX_FOLLOW_SYMLINKS 256
