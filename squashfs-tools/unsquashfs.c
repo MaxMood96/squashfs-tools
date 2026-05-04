@@ -1957,7 +1957,7 @@ static int follow_symlink(char *path, int symlinks, struct directory_stack *stac
 	}
 
 	if(path == NULL)
-		return FALSE;
+		return TRUE;
 
 	if(strcmp(target, "..") == 0) {
 		if(depth > 1)
@@ -2119,7 +2119,7 @@ static int follow_path(char *path, int symlinks, struct directory_stack *stack)
 	}
 
 	if(path == NULL)
-		return FALSE;
+		return TRUE;
 
 	if(strcmp(target, "..") == 0) {
 		if(depth > 1)
